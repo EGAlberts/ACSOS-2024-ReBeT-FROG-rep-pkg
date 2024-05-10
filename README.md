@@ -52,16 +52,23 @@ We provide a docker image (https://hub.docker.com/repository/docker/egalberts/re
    This will open several terminals, including the gazebo simulator. Getting everything up and running can take roughly 1 minute. Then, without any user intervention FROG should begin its mission. If you would like to reproduce the entire evaluation, simply replace ACSOSEVAL1.sh with ACSOSEVAL2.sh in the above command. Please note, each run of this script takes at least 5 minutes, meaning running it to completion would take about 6 hours. Executing ACSOSEVAL1.sh is only one run, and takes about 5 minutes to complete. We recommend just running the above command if yuo would like to get an idea, and save the rest for anyone interested in extending our work.
 
 #### Reproducing the results
-1. Besides the docker image, in this repository we provide the data and python scripts used for the results reported in the paper. Once you have cloned this repository, you can use the following command in the clonedd folder to produce the plot of this first evaluation:
+Here we cover reproducing the plots and parsing of data for the evaluations. You need to have Python 3 installed.
+
+0. Clone this repository, and use the following command in a terminal in the cloned folder to install the dependencies for the analysis scripts.
+    ```Bash
+   pip install -r src/requirements.txt
+   ```
+   
+1. You can use the following command to produce the plot of the first evaluation:
       ```Bash
-   python eval1plot.py
+   python src/evaluationA.py
    ```
    note: On your system python 3 may use the command `python3` rather than `python`, if so please replace `python` with `python3` in the above command.
 
 2. To reproduce the tables and analyses done for the results of the second evaluation, please use the following command within the cloned repository folder:
    ```Bash
-   python eval2plot.py
+   python src/evaluationB.py
    ```
-These python scripts parse the csv files found under the subfolders of the results folder, which you can also view directly. Each csv represents a singular execution of the mission.
+These python scripts parse the csv files found under the subfolders of the data folder, which you can also view directly. Each csv represents a singular execution of the mission.
 
 

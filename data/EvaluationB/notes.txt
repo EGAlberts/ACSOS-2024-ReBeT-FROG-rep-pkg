@@ -1,0 +1,3 @@
+Please note, in the column 'curr_cam_topic' of the baseline csvs, it incorrectly states the current camera topic is not available. This just indicates it is the default, which is the camera onboard the tb3.
+
+Please note, in offline and online, the power budget for detecting object incorrectly states negative values, as it keeps counting down the budget despite the external camera being in use. This does not affect the calculations, but may mislead.
