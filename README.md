@@ -1,5 +1,5 @@
-# Thesis / Paper Title
-This repository is a companion page for the following thesis / publication:
+# ReBeT: Architecture-based Self-adaptation of Robotic Systems through Behavior Trees
+<!-- This repository is a companion page for the following publication:
 > Author Names. Publication year. Thesis / Paper title. Publication venue / proceedings.
 
 It contains all the material required for replicating the study, including: X, Y, and Z.
@@ -18,51 +18,50 @@ If this study is helping your research, consider to cite it is as follows, thank
   year={},
   publisher={}
 }
-```
+``` -->
 
 ## Quick start
-Here a documentation on how to use the replication material should be provided.
+
+To be able to use this replication package, you need to install docker: https://docs.docker.com/get-docker/ .
+
 
 ### Getting started
 
-1. Provide step-by-step instruction on how to use this repository, including requirements, and installation / script execution steps.
+#### Re-doing the experiments
+We provide a docker image (https://hub.docker.com/repository/docker/egalberts/rebetfrog/general) as an all-in-one solution for reproducing the evaluation of our work. We will now explain how it can be used:
+1. Use the following command to create a container based on the image, which deletes itself upon stopping:   
+   ```Bash
+   docker run --rm  -it --shm-size=512m -p 6901:6901 -e VNC_PW=password egalberts/rebetfrog:acsos 
+   ```
+    note: depending on your OS and install, you may need to prepend the command with `sudo`.
+2.Once it is running, using your web browser navigate to `localhost:6901`. You will be prompted for a username and password which are as follows:
+ - **User** : `kasm_user`
+ - **Password**: `password`
 
-2. Code snippets should be formatted as follows.
-   - `git clone https://github.com/S2-group/template-replication-package`
+  note: The password is specified in the run command from step 1, and can be changed.
 
-3. Links to specific folders / files of the repository can be linked in Markdown, for example this is a link to the [src](src/) folder.
+3. You should now find yourself looking at a desktop of virtual machine of Ubuntu 22. Within the virtual machine, use the file explorer to navigate to `/home/kasm-user/rebet_ws/`. Here you will find a build_all.sh scripts as well as a src folder and scripts folder. The former contains ReBeT's source code aligned with its repository (https://github.com/EGAlberts/ReBeT/tree/ACSOS), the latter contains scripts which run FROG alongside ReBeT as in the evaluation. Use the following command in a terminal inside this folder to build all of the ROS2 packages:
+   ```Bash
+   ./build_all.sh
+   ```
+   note: While there may be some warnins/error messages, unless the build explicitly fails and aborts itself, everything should be built correctly upon completion. This process should take around 3-5 minutes.
+4. Now you are ready to reproduce the evaluation. Within the scripts folder we provide two scripts corresponding to the two subsections of our evaluation, namely `ACSOSEVAL1.sh` and `ACSOSEVAL2.sh`. You can simply use the following command in the same terminal you built in to get the ball rolling:
+   ```Bash
+   ./scripts/ACSOSEVAL1.sh
+   ```
+   This will open several terminals, including the gazebo simulator. Getting everything up and running can take roughly 1 minute. Then, without any user intervention FROG should begin its mission. If you would like to reproduce the entire evaluation, simply replace ACSOSEVAL1.sh with ACSOSEVAL2.sh in the above command. Please note, each run of this script takes at least 5 minutes, meaning running it to completion would take about 6 hours. Executing ACSOSEVAL1.sh is only one run, and takes about 5 minutes to complete. We recommend just running the above command if yuo would like to get an idea, and save the rest for anyone interested in extending our work.
 
-## Repository Structure
-This is the root directory of the repository. The directory is structured as follows:
+#### Reproducing the results
+1. Besides the docker image, in this repository we provide the data and python scripts used for the results reported in the paper. Once you have cloned this repository, you can use the following command in the clonedd folder to produce the plot of this first evaluation:
+      ```Bash
+   python eval1plot.py
+   ```
+   note: On your system python 3 may use the command `python3` rather than `python`, if so please replace `python` with `python3` in the above command.
 
-    template-replication-package
-     .
-     |
-     |--- src/                             Source code used in the thesis / paper
-     |
-     |--- documentation/                   Further structured documentation of the replication package content
-     |
-     |--- data/                            Data used in the thesis / paper 
-            |
-            |--- additional_subfolder/     Subfolders should be further nested to increase readability                 
-  
+2. To reproduce the tables and analyses done for the results of the second evaluation, please use the following command within the cloned repository folder:
+   ```Bash
+   python eval2plot.py
+   ```
+These python scripts parse the csv files found under the subfolders of the results folder, which you can also view directly. Each csv represents a singular execution of the mission.
 
-Usually, replication packages should include:
-* a [src](src/) folder, containing the entirety of the source code used in the study,
-* a [data](data/) folder, containing the raw, intermediate, and final data of the study
-* if needed, a [documentation](documentation/) folder, where additional information w.r.t. this README is provided. 
 
-In addition, the replication package can include additional data/results (in form of raw data, tables, and/or diagrams) which were not included in the study manuscript.
-
-## Replication package naming convention
-The final name of this repository, as appearing in the published article, should be formatted according to the following naming convention:
-`<short conference/journal name>-<yyyy>-<semantic word>-<semantic word>-rep-pkg`
-
-For example, the repository of a research published at the International conference on ICT for Sustainability (ICT4S) in 2022, which investigates cloud tactics would be named `ICT4S-2022-cloud-tactics-rep-pkg`
-
-## Preferred repository license
-As general indication, we suggest to use:
-* [MIT license](https://opensource.org/licenses/MIT) for code-based repositories, and 
-* [Creative Commons Attribution 4.0	(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) for text-based repository (papers, docts, etc.).
-
-For more information on how to add a license to your replication package, refer to the [official GitHUb documentation](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
