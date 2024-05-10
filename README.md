@@ -20,14 +20,12 @@ If this study is helping your research, consider to cite it is as follows, thank
 }
 ``` -->
 
-## Quick start
-
-To be able to use this replication package, you need to install docker: https://docs.docker.com/get-docker/ .
 
 
-### Getting started
 
-#### Re-doing the experiments
+
+### Re-doing the experiments
+To be able to use this part of the replication package, you need to install docker: https://docs.docker.com/get-docker/ .
 We provide a docker image (https://hub.docker.com/repository/docker/egalberts/rebetfrog/general) as an all-in-one solution for reproducing the evaluation of our work. We will now explain how it can be used:
 1. Use the following command to create a container based on the image, which deletes itself upon stopping:   
    ```Bash
@@ -51,8 +49,8 @@ We provide a docker image (https://hub.docker.com/repository/docker/egalberts/re
    ```
    This will open several terminals, including the gazebo simulator. Getting everything up and running can take roughly 1 minute. Then, without any user intervention FROG should begin its mission. If you would like to reproduce the entire evaluation, simply replace ACSOSEVAL1.sh with ACSOSEVAL2.sh in the above command. Please note, each run of this script takes at least 5 minutes, meaning running it to completion would take about 6 hours. Executing ACSOSEVAL1.sh is only one run, and takes about 5 minutes to complete. We recommend just running the above command if yuo would like to get an idea, and save the rest for anyone interested in extending our work.
 
-#### Reproducing the results
-Here we cover reproducing the plots and parsing of data for the evaluations. You need to have Python 3 installed.
+### Analysis of the results
+Here we cover reproducing the plots and parsing of data for the evaluations. You need to have Python 3 installed. We provide all the data we used, so it is not necessary to do any of the experiments yourself to look at the source of our results.
 
 0. Clone this repository, and use the following command in a terminal in the cloned folder to install the dependencies for the analysis scripts.
     ```Bash
