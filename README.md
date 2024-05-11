@@ -26,10 +26,10 @@ If this study is helping your research, consider to cite it is as follows, thank
 
 ### Re-doing the experiments
 To be able to use this part of the replication package, you need to install docker: https://docs.docker.com/get-docker/ .
-We provide a docker image (https://hub.docker.com/repository/docker/egalberts/rebetfrog/general) as an all-in-one solution for reproducing the evaluation of our work. We will now explain how it can be used:
+We provide a docker image (https://hub.docker.com/r/rebetacsos2024/frog) as an all-in-one solution for reproducing the evaluation of our work. We will now explain how it can be used:
 1. Use the following command to create a container based on the image, which deletes itself upon stopping:   
    ```Bash
-   docker run --rm  -it --shm-size=512m -p 6901:6901 -e VNC_PW=password egalberts/rebetfrog:acsos 
+   docker run --rm  -it --shm-size=512m -p 6901:6901 -e VNC_PW=password rebetacsos2024/frog:acsos 
    ```
     note: depending on your OS and install, you may need to prepend the command with `sudo`.
 2.Once it is running, using your web browser navigate to `localhost:6901`. You will be prompted for a username and password which are as follows:
