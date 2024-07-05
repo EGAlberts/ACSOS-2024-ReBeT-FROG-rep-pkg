@@ -45,14 +45,16 @@ Within the scripts folder, there are two main shell scripts corresponding to the
    ```
    This will open several terminals, including the gazebo simulator. Getting everything up and running can take roughly 1 minute. Then, without any user intervention FROG should begin its mission. If you would like to reproduce the entire evaluation, simply replace ACSOSEVAL1.sh with ACSOSEVAL2.sh in the above command. Please note, each run of this script takes at least 5 minutes, meaning running it to completion would take about 6 hours. Executing ACSOSEVAL1.sh is only one run, and takes about 5 minutes to complete.
 
+<<<<<<< HEAD
 Each time a run completes, it produces a timestamped CSV file in the scripts folder with the results of that run. This details things such as the satisfaction of various quality requirements in effect, and the adaptations in effect, on a second-by-second basis.  
 
 It is easy to modify and extend ReBeT. The first place to look to get an understanding is the specfication of the behavior trees, in the folder src/rebet/rebet/trees/. All the trees starting with 'frog_' are used in the different parts of the evaluations. In these xml files one can modify minor things with only a simple rebuild necessary, such as the adaptation period used for changing the maximum speed. Within the source code, existing QRDecorators can be modified to experiment with different constraints, or new ones can be introduced. For truly extending ReBeT, we recommend using the main branch of ReBeT https://github.com/EGAlberts/ReBeT/ which we are actively developing, and has been refined thoroughly since the submission to ACSOS.
 
-Please note: We strove to introduce as few changes as possible to the code provided in the artifact, to provide an identical setup to what was used to produce the results presented in the papee/
+Please note: We strove to introduce as few changes as possible to the code provided in the artifact, to provide an identical setup to what was used to produce the results presented in the paper.
 
-### Reproducing the plots
-Here we cover reproducing the plots and parsing of data for the evaluations. You need to have Python 3 installed. All the data is provided in the repo, so it is not necessary to run the experiments using docker and exporting the data. 
+### Analysis of the results
+Here we cover reproducing the plots and parsing of data for the evaluations. You need to have Python 3 installed. We provide all the data we used, so it is not necessary to do any of the experiments yourself to look at the source of our results.
+>>>>>>> db0b92bf89b920ca8c29e741838afb889a9fc104
 
 0. Clone this repository, and use the following command in a terminal in the cloned folder to install the dependencies for the analysis scripts.
     ```Bash
