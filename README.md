@@ -43,6 +43,9 @@ Within the scripts folder, there are two main shell scripts corresponding to the
    ```Bash
    ./scripts/ACSOSEVAL1.sh
    ```
+
+Note: On MacOS, do not use the Terminator for runnning the above, but the MATE Terminal (Click on Menu on the top left, then System Tools to find the MATE Terminal).
+
    This will open several terminals, including the gazebo simulator. Getting everything up and running can take roughly 1 minute. Then, without any user intervention FROG should begin its mission. If you would like to reproduce the entire evaluation, simply replace ACSOSEVAL1.sh with ACSOSEVAL2.sh in the above command. Please note, each run of this script takes at least 5 minutes, meaning running it to completion would take about 6 hours. Executing ACSOSEVAL1.sh is only one run, and takes about 5 minutes to complete.
 
 Each time a run completes, it produces a timestamped CSV file in the scripts folder with the results of that run. This details things such as the satisfaction of various quality requirements in effect, and the adaptations in effect, on a second-by-second basis.  
