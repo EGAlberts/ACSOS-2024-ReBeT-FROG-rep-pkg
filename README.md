@@ -37,7 +37,7 @@ While the container is running, you can open a GUI to it through your web browse
 
 ### Reproducing the Evaluation
 
-Within the web-based GUI, navigate to the Home folder (shortcut on the desktop), there you should find a folder named `rebet_ws`. Within this folder you will find the source code, and built packages, of a variety of open source packages including that of our own work ReBeT. You can find the version used for the artifact here: https://github.com/EGAlberts/ReBeT/tree/ACSOS).
+Within the web-based GUI, navigate to the Home folder (shortcut on the desktop), there you should find a folder named `rebet_ws`. Within this folder you will find the source code, and built packages, of a variety of open source packages including that of our own work ReBeT. You can find the version used for the artifact here: https://github.com/EGAlberts/ReBeT/tree/ACSOS.
 
 Within the scripts folder, there are two main shell scripts corresponding to the two evaluations in the paper namely `ACSOSEVAL1.sh` and `ACSOSEVAL2.sh`. You can simply use the following command in the same terminal you built in to get the ball rolling:
    ```Bash
