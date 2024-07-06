@@ -29,7 +29,6 @@ mv rebet src/
 mv rebet_msgs src/
 
 cd src
-echo "nothing"
 
 vcs import < rebet/rebet.rosinstall
 
