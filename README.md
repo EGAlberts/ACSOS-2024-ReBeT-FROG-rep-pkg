@@ -30,7 +30,7 @@ To create a docker container based on the docker image containing the artifact, 
    ```Bash
    docker run --rm  -p 6080:80 --privileged --name acsos_artifact egalberts/rebet:acsos 
    ```
-The --rm option here indicates the upon closing the container it will delete itself to conserve space. After executing the command it will begin downloading the image. Note: this may take a while. When the download is complete it will create and run the container, the terminal should evneutllay output something like: "vnc entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)". This indicates the container is ready to be used.
+The --rm option here indicates the upon closing the container it will delete itself to conserve space. After executing the command it will begin downloading the image. Note: this may take a while. When the download is complete it will create and run the container, the terminal should eventually output something like: "vnc entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)". This indicates the container is ready to be used.
 
 ## Execution
 While the container is running, you can open a GUI to it through your web browser. Use your preferred web browser to navigate to `localhost:6080` . Note, if for whatever reason port `6080` is in use on your machine, you can change it in the docker run command above to whatever you like, and make sure to reflect that change in the URL used in your web browser. 
