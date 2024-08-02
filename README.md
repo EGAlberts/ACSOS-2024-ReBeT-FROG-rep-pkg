@@ -57,7 +57,7 @@ Please note that the csv produced is the same for both evaluations, meaning depe
 
 ### Extensions
 
-It is easy to modify and extend ReBeT. The first place to look to get an understanding is the specification of the behavior trees, in the folder src/rebet/rebet/trees/. All the trees starting with 'frog_' are used in the different parts of the evaluations. In these xml files one can modify minor things with only a simple rebuild necessary, such as the adaptation period used for changing the maximum speed. Within the source code, existing QRDecorators can be modified to experiment with different constraints, or new ones can be introduced. For truly extending ReBeT, we recommend using the main branch of ReBeT https://github.com/EGAlberts/ReBeT/ which we are actively developing, and has been refined thoroughly since the submission to ACSOS.
+It is easy to modify and extend ReBeT. The first place to look to get an understanding is the specification of the behavior trees, in the folder src/rebet/trees/. All the trees starting with 'frog_' are used in the different parts of the evaluations. In these xml files one can modify minor things with only a simple rebuild necessary, such as the adaptation period used for changing the maximum speed. Within the source code, existing QRDecorators can be modified to experiment with different constraints, or new ones can be introduced. For truly extending ReBeT, we recommend using the main branch of ReBeT https://github.com/EGAlberts/ReBeT/ which we are actively developing, and has been refined thoroughly since the submission to ACSOS.
 
 To help explain, we provide a short example of making a change:
 
